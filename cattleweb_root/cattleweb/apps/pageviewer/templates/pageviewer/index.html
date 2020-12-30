@@ -1,0 +1,14 @@
+{% extends "cattleweb/layout/fullwidth.html" %}
+{% load static %}
+
+{% block title %} Test {% endblock %}
+
+{% block content %}
+
+  <h1>Index</h1>
+  <p class="important">
+    Welcome on my awesome homepage.
+    <img src = "{% static 'pageviewer/img/im1.JPG' %}" />
+  </p>
+
+{% endblock %}

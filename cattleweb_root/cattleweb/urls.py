@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('survey/',include('survey.urls')),
-    path('admin/', admin.site.urls),
+    path(r'',include(('pageviewer.urls','pageviewer'),namespace='pageviewer')),
+    path(r'survey/',include(('survey.urls','survey'),namespace='survey')),
+    path(r'admin/', admin.site.urls),
 ]
