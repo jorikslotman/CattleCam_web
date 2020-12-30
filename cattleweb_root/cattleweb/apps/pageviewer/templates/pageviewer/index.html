@@ -1,14 +1,21 @@
-{% extends "cattleweb/layout/fullwidth.html" %}
+{% extends "cattleweb/layout/fullwidth-frontpage.html" %}
 {% load static %}
 
 {% block title %} Test {% endblock %}
 
 {% block content %}
 
-  <h1>Index</h1>
-  <p class="important">
-    Welcome on my awesome homepage.
-    <img src = "{% static 'pageviewer/img/im1.JPG' %}" />
-  </p>
+<section id="hero" class="d-flex align-items-center">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <h1>Maak kennis met <span>CattleCam</spa>
+    </h1>
+    <h2>Zicht op de zaak</h2>
+    <div class="d-flex">
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
+    </div>
+  </div>
+</section>
 
+<!--<img src = "{% static 'pageviewer/img/im1.JPG' %}" />-->
 {% endblock %}
