@@ -5,3 +5,6 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'pageviewer/index.html')
 
+def over_ons(request):
+    return render(request, 'pageviewer/over_ons.html')
+
