@@ -6,7 +6,8 @@ from .models import Answer
 def index(request):
     return render(request, 'survey/index.html')
 
-def assess(request):
+def assess(request,survey_id):
+
     return render(request, 'survey/assess.html')
 
 
