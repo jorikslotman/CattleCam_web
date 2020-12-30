@@ -6,58 +6,72 @@
 
 {% block over_ons %}
 <div class="about-section">
-  <h1>Over ons</h1>
-  <p>Dit gaat over wat we doen</p>
-  <p>Wij zijn een jong en gepassioneerd team van technische gasten die graag het gedrag van uw koeien in kaart willen brengen. Vul hier de enquete in.
-    Met onze achtergrond in data mining, machine learning, mechatronica en data driven farming hebben we de unieke set aan kennis om u zo goed mogelijk van dienst te zijn.
-    Maak hier onder kennis met de personen achter CattleCam en schroom niet omm ons persoonlijk te benaderen! Liefs... xoxox
-  </p>
+	<h1>Over Ons</h1>
+	<p>
+		Wij zijn een jong en gepassioneerd team van technische gasten die graag het gedrag van uw koeien in kaart willen brengen. Vul hier de enquete in.
+		Met onze achtergrond in data mining, machine learning, mechatronica en data driven farming hebben we de unieke set aan kennis om u zo goed mogelijk van dienst te zijn.
+		Maak hier onder kennis met de personen achter CattleCam en schroom niet omm ons persoonlijk te benaderen! Liefs... xoxox.
+	</p>
 </div>
+
+
 {% endblock %}
 
 {% block het_team %}
-<div class="container">
-  <h2>The Team</h2>
-		<div class="grid">
-      <figure class="effect-dexter" style="background-image: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(0,0,0) 100%);">
-				<img src="{% static 'pageviewer/img/willem.jpg' %}" alt="janwillem">
-				<figcaption>
-          <h2>Jan Willem <span>Pelleboer</span></h2>
-          <h3>Co-Founder</h3>
-					<p>With his robotic engineering and entrepreneurial background, Willem has gained his programming skills which he applies in machine learning-based pattern recognition.</p>
-					<a href="https://www.linkedin.com/in/willem-de-graaf/"></a>
-				</figcaption>			
-			</figure>
-
-			<figure class="effect-dexter" style="background-image: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(0,0,0) 100%);">
-				<img src="{% static 'pageviewer/img/jorik.jpg' %}" alt="img19">
-				<figcaption>
-          <h2>Jorik <span>Slotman</span></h2>
-          <h3>Co-Founder</h3>
-					<p>Moved by his enthusiasm in A.I. and automation, Jorik has developed a wide background in machine learning that he applies in the medical and e-commerce fields.</p>
-					<a href="https://www.linkedin.com/in/jorik-slotman-781484190/"></a>
-				</figcaption>			
-			</figure>
-			<figure class="effect-dexter" style="background-image: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(0,0,0) 100%);">
-				<img src="{% static 'pageviewer/img/mark.jpg' %}" alt="img12">
-				<figcaption>
-          <h2>Mark <span>Selles</span></h2>
-          <h3>Co-Founder</h3>
-					<p>Mark has a wide experience in creating e-commerce tools, which he combines with machine learning, ranging from segmentation to prediction models.</p>
-					<a href="https://www.linkedin.com/in/mark-selles-160505179/"></a>
-				</figcaption>			
-      </figure>
-      
-      <figure class="effect-dexter" style="background-image: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(0,0,0) 100%);">
-				<img src="{% static 'pageviewer/img/willem.jpg' %}" alt="willem">
-				<figcaption>
-          <h2>Willem <span>De Graaf</span></h2>
-          <h3>Co-Founder</h3>
-					<p>With his robotic engineering and entrepreneurial background, Willem has gained his programming skills which he applies in machine learning-based pattern recognition.</p>
-					<a href="https://www.linkedin.com/in/willem-de-graaf/"></a>
-				</figcaption>			
-			</figure>
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'pageviewer/img/mark.jpg' %}" alt="Jan Willem" style="width:100%">
+      <div class="container">
+        <h2>Jan Willem</h2>
+        <p class="title">Beunhaas 1</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>janwillem@cattlecam.nl</p>
+        <p><button class="button">Contact</button></p>
+      </div>
     </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'pageviewer/img/mark.jpg' %}" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Mark</h2>
+        <p class="title">Beunhaas 2</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>mark@cattlecam.nl</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'pageviewer/img/willem.jpg' %}" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Willem</h2>
+        <p class="title">Beunhaas 3</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>willem@cattlecam.nl</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+	</div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'pageviewer/img/jorik.jpg' %}" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Jorik</h2>
+        <p class="title">Beunhaas 4</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jorik@cattlecam.nl</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+	</div>
+  </div>
+
 </div>
 {% endblock %}
 
