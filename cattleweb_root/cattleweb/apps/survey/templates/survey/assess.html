@@ -4,18 +4,7 @@
 {% block title %} Vragen {% endblock %}
 
 {% block content %}
-    {% if messages %}
-      <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-          {% for message in messages %}
-          <div class="alert alert-{{ message.tags }}" role="alert">
-              <p>{{ message }}</p>
-          </div>
-          {% endfor %}
-        </div>
 
-      </div>
-    {% endif %}
 
     <h1> {{survey.public_title}} </h1>
     <p> {{survey.public_description}}</p>
@@ -60,9 +49,12 @@
 
     </div>
     {% endfor %}
-
-    <button type="submit" class="btn btn-primary">Verzend</button>
-
+    <div class="row">
+        <div class="col"><button type="submit" class="btn btn-primary">Verzend</button></div>
+        <div class="col text-right"><a class="btn btn-warning" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
+    </div>
     </form>
+
+
 
 {% endblock %}

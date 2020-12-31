@@ -22,5 +22,6 @@ def assess(request,survey_id):
     return render(request, 'survey/assess.html',context=context)
 
 def process_survey(request):
+    messages.warning(request, 'Functie niet beschikbaar.')
     return redirect('survey:index')
 
