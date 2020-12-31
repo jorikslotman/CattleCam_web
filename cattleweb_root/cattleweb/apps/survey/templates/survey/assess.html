@@ -4,56 +4,65 @@
 {% block title %} Vragen {% endblock %}
 
 {% block content %}
+    {% if messages %}
+      <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}" role="alert">
+              <p>{{ message }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    {% endif %}
+
+    <h1> {{survey.public_title}} </h1>
+    <p> {{survey.public_description}}</p>
+
+    <form action="{% url 'survey:process' %}" method="POST">
+    {% csrf_token %}
+    {% for question in survey.questions %}
+    <div class="bg-light">
+        <h3>{{question.question_text}}</h3>
 
 
-<div >
-    <h2>Enquête</h2>
-    Bedankt voor uw deelname etc.
-</div>
-<form>
-    <div class="form-group row">
-        <h3>Personalia</h3>
-    </div>
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-        </div>
-    </div>
-    <div class="form-group row">
-        <h3>Vragen</h3>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-2">Vraag 1?</div>
-        <div class="col-sm-10">
+        {% for answer in question.answers %}
+
+           {% if answer.answer_type == 'checkbox' or answer.answer_type == 'radio' %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck1">
-                <label class="form-check-label" for="gridCheck1">
-                    Antwoord 1
-                </label>
+              <input class="form-check-input" type="{{answer.answer_type}}" value="{{answer.id}}" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                  {% if answer.public_description == 'input' %}
+                  <input class="form-control" type="text" placeholder="Anders...">
+                  {% else %}
+                    {{answer.public_description}}
+                  {% endif %}
+              </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck2">
-                <label class="form-check-label" for="gridCheck2">
-                    Antwoord 2
-                </label>
-            </div>
-        </div>
+            {% endif %}
+
+           {% if answer.answer_type == 'input' %}
+              <div class="form-group">
+                <label for="formGroupExampleInput">{{answer.public_description}}</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Antwoord">
+              </div>
+            {% endif %}
+
+           {% if answer.answer_type == 'text_field' %}
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">{{answer.public_description}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            {% endif %}
+
+        {% endfor %}
+
     </div>
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Verstuur</button>
-        </div>
-    </div>
-</form>
-<p class="lead">
-    <a class="btn btn-warning btn-lg" href="{% url 'survey:index' %}" role="button">Ga terug</a>
-</p>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Verzend</button>
+
+    </form>
 
 {% endblock %}
