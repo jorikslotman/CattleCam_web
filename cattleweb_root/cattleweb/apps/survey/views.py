@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import messages
 from django.shortcuts import redirect
 
 from .models import Survey
-# Create your views here.
+from .forms import SurveyForm
 
 
 def index(request):
@@ -17,11 +17,23 @@ def assess(request,survey_id):
         messages.warning(request, 'Vragenlijst niet gevonden.')
         return redirect('survey:index')
 
-    context = {'survey' : survey}
+    if request.method == 'POST':
+        form = SurveyForm(survey,request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+
+            return redirect('survey:thanks')
+
+
+    form = SurveyForm(survey)
+    context = {
+        'survey' : survey,
+        'form' : form,
+               }
 
     return render(request, 'survey/assess.html',context=context)
 
-def process_survey(request):
-    messages.warning(request, 'Functie niet beschikbaar.')
+def thanks(request):
+    messages.success(request, 'Bedankt voor het invullen!')
     return redirect('survey:index')
 

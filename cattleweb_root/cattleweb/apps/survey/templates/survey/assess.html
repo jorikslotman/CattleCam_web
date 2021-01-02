@@ -1,59 +1,24 @@
 {% extends "cattleweb/layout/singlecolumn-full.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %} Vragen {% endblock %}
 
 {% block content %}
 
 
-    <h1> {{survey.public_title}} </h1>
-    <p> {{survey.public_description}}</p>
-
-    <form action="{% url 'survey:process' %}" method="POST">
-    {% csrf_token %}
-    {% for question in survey.questions %}
-    <div class="bg-light">
-        <h3>{{question.question_text}}</h3>
-
-
-        {% for answer in question.answers %}
-
-           {% if answer.answer_type == 'checkbox' or answer.answer_type == 'radio' %}
-            <div class="form-check">
-              <input class="form-check-input" type="{{answer.answer_type}}" value="{{answer.id}}" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                  {% if answer.public_description == 'input' %}
-                  <input class="form-control" type="text" placeholder="Anders...">
-                  {% else %}
-                    {{answer.public_description}}
-                  {% endif %}
-              </label>
-            </div>
-            {% endif %}
-
-           {% if answer.answer_type == 'input' %}
-              <div class="form-group">
-                <label for="formGroupExampleInput">{{answer.public_description}}</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Antwoord">
-              </div>
-            {% endif %}
-
-           {% if answer.answer_type == 'text_field' %}
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">{{answer.public_description}}</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-            {% endif %}
-
-        {% endfor %}
-
-    </div>
-    {% endfor %}
-    <div class="row">
-        <div class="col"><button type="submit" class="btn btn-primary">Verzend</button></div>
-        <div class="col text-right"><a class="btn btn-warning" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
-    </div>
+<div class="jumbotron">
+    <h1 class="display-4">{{form.title}}</h1>
+    <p class="lead">{{form.desc}}</p>
+    <hr class="my-4">
+    <form action="{% url 'survey:process' survey.id %} " method="post">
+        {% crispy form form.helper %}
+        <div class="row justify-content-between">
+            <div class="col"><input type="submit" name="submit" value="Verstuur" class="btn btn-primary" id="submit-id-submit" /></div>
+            <div class="col text-right"><a class="btn btn-secondary" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
+        </div>
     </form>
+</div>
 
 
 
