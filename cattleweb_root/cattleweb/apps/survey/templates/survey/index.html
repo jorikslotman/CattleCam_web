@@ -5,13 +5,12 @@
 
 {% block content %}
 
-
     <h1 class="display-4">Neem deel aan het marktonderzoek!</h1>
     <p class="lead">Ontvang korting bij het volledig invullen van de enquête.</p>
     <hr class="my-4">
     <p>Ongeveer 5 minuten:</p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="{% url 'survey:assess' %}" role="button">Start enquête</a>
+      <a class="btn btn-primary btn-lg" href="{% url 'survey:assess' survey_id=1 %}" role="button">Start enquête</a>
     </p>
 
 

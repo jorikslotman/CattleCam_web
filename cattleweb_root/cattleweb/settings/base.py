@@ -29,6 +29,7 @@ SECRET_KEY = '%3p5e103wby!yyao5zd2^%)gavi_ekw9a*cvf@84elifhqsnu='
 INSTALLED_APPS = [
     'pageviewer.apps.PageviewerConfig',
     'survey.apps.SurveyConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +120,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'cattleweb', "static"),
-    '/static/',
 ]
 
 STATIC_URL = '/static/'
