@@ -2,10 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import messages
 from django.shortcuts import redirect
-
-from .models import Survey
+import datetime
+from .models import Survey,Response
 from .forms import SurveyForm
-
 
 def index(request):
     return render(request, 'survey/index.html')
@@ -19,17 +18,24 @@ def assess(request,survey_id):
 
     if request.method == 'POST':
         form = SurveyForm(survey,request.POST)
+
         # check whether it's valid:
         if form.is_valid():
+            for response_data in form.get_Response_list():
+                response_object = Response(
+                    answer=response_data['Answer'],
+                    answer_text=response_data['answer_text'],
+                    submitted=response_data['submitted'],
+                    submitted_id=response_data['submitted_id'],
+                    response_time=datetime.datetime.now()
+                )
+                response_object.save()
 
             return redirect('survey:thanks')
 
 
     form = SurveyForm(survey)
-    context = {
-        'survey' : survey,
-        'form' : form,
-               }
+    context = {'survey' : survey,'form' : form,}
 
     return render(request, 'survey/assess.html',context=context)
 

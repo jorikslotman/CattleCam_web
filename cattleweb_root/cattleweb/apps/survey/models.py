@@ -22,6 +22,7 @@ class Question(models.Model):
     question_text = models.TextField()
     private_description = models.TextField(null=True)
     order_num = models.IntegerField(default=1)
+    published = models.BooleanField(default=True)
 
     @property
     def answers(self):
@@ -42,12 +43,14 @@ class Answer(models.Model):
     public_description = models.CharField(max_length=200,)
     private_description = models.CharField(null=True,max_length=200)
     order_num = models.IntegerField(default=1)
+    published = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.private_description
+        return self.public_description
 
 class Response(models.Model):
     answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
-    answer_text = models.CharField(max_length=200)
+    answer_text = models.CharField(max_length=400)
     response_time = models.DateTimeField(auto_now_add=True)
     submitted = models.BooleanField(default=False)
+    submitted_id = models.IntegerField()  # unique identifier for each submitted form
