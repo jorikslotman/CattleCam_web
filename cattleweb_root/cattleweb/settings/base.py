@@ -20,8 +20,6 @@ sys.path.insert(0, os.path.join(BASE_DIR,'cattleweb','apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%3p5e103wby!yyao5zd2^%)gavi_ekw9a*cvf@84elifhqsnu='
 
 
 # Application definition
@@ -71,15 +69,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cattleweb.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
