@@ -41,5 +41,5 @@ def assess(request,survey_id):
 
 def thanks(request):
     messages.success(request, 'Bedankt voor het invullen!')
-    return redirect('survey:index')
+    return redirect('survey:assess',survey_id=2)
 
