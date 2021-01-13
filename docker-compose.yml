@@ -1,22 +1,23 @@
 version: '3.7'
 
 services:
-  web:
+  cattleweb:
     build: ./cattleweb_root
     volumes:
-      - static_data:/vol/web
+      - static_data:/vol/cattleweb
     environment:
-      - cattleweb=prod
-
+      - proddev=prod
+    env_file:
+      - very_secret.env
   proxy:
     build:
       context: ./nginx
     volumes:
-      - static_data:/vol/static
+      - static_data:/vol
     ports:
       - "8000:8000"
     depends_on:
-      - web
+      - cattleweb
 
 volumes:
    static_data:
