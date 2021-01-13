@@ -8,3 +8,11 @@ def index(request):
 def over_ons(request):
     return render(request, 'pageviewer/over_ons.html')
 
+def contact(request):
+    return render(request, 'pageviewer/contact.html')
+    
+def services(request):
+    return render(request, 'pageviewer/services.html')
+
+def producten(request):
+    return render(request, 'pageviewer/producten.html')

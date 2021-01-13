@@ -27,8 +27,49 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
+          {% url 'pageviewer:index' as pageviewer_index_url %}
+          <li class="{% if request.get_full_path == pageviewer_index_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:index' %}">Home </a>
+          </li>
+          
+          {% url 'pageviewer:producten' as pageviewer_producten_url %}
+          <li class="{% if request.get_full_path == pageviewer_production_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:producten' %}">Producten</a>
+          </li>
+
+          {% url 'pageviewer:over-ons' as pageviewer_overons_url %}
+          <li class="{% if request.get_full_path == pageviewer_overons_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:over-ons' %}">Over Ons</a>
+          </li>
+
+          {% url 'pageviewer:services' as pageviewer_services_url %}
+          <li class="{% if request.get_full_path == pageviewer_services_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:services' %}">Services</a>
+          </li>
+
+          {% url 'pageviewer:contact' as pageviewer_contact_url %}
+          <li class="{% if request.get_full_path == pageviewer_contact_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:contact' %}">Contact</a>
+          </li>
+
+          {% url 'survey:index' as survey_index_url %}
+          <li class="{% if request.get_full_path == survey_index_url %} active {% endif %}">
+              <a href="{% url 'survey:index' %}">Enquête</a>
+          </li>
+
+
+
+          <!-- Producten
+          Over ons -->
+          <!-- Services -->
+          <!-- Contact -->
+          <!-- Enquete -->
+
+
+
+
+
+          <!-- <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
@@ -49,7 +90,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contact</a></li> -->
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -60,12 +101,7 @@
 
 
 
-
-
-
-
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">CattleCam&trade;</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,5 +123,4 @@
             </li>
         </ul>
     </div>
-</nav>
- -->
+</nav> -->
