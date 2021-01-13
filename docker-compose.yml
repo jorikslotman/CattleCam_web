@@ -3,10 +3,20 @@ version: '3.7'
 services:
   web:
     build: ./cattleweb_root
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./cattleweb_root/:/usr/src/app/
-    ports:
-      - 8000:8000
+      - static_data:/vol/web
     environment:
       - cattleweb=prod
+
+  proxy:
+    build:
+      context: ./nginx
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - web
+
+volumes:
+   static_data:
