@@ -75,7 +75,7 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
-            <img src="{% static 'pageviewer/img/camera.jpg' %}" >
+            <img src="{% static 'pageviewer/img/camera.jpg' %}" class="img-fluid" >
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -107,5 +107,74 @@
     </section><!-- End About Section -->
 {% endblock %}
 
+{% block testimonials %}
+  <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials" style="background: url({% static 'pageviewer/img/testimonials-bg.jpg' %}) no-repeat; padding: 80px 0;
+  background-position: center center;
+  background-size: cover;
+  position: relative;;">
+      <div class="container" data-aos="zoom-in">
 
+        <div class="owl-carousel testimonials-carousel">
 
+          <div class="testimonial-item">
+            <img src="{% static 'pageviewer/img/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+            <h3>Peter de Vries</h3>
+            <h4>Boer en tevreden gebruiker</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Dankzij CattleCam kan ik op het land mooi zien of het afkalven vordert.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pageviewer/img/testimonials-2.jpg' %}"class="testimonial-img" alt="">
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pageviewer/img/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+            <h3>Jena Karlis</h3>
+            <h4>Store Owner</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pageviewer/img/testimonials-4.jpg' %}"class="testimonial-img" alt="">
+            <h3>Matt Brandon</h3>
+            <h4>Freelancer</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="{% static 'pageviewer/img/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+            <h3>John Larson</h3>
+            <h4>Entrepreneur</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+{% endblock %}
