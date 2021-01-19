@@ -5,7 +5,7 @@ services:
     build: ./cattleweb_root
     volumes:
       - static_data:/vol/cattleweb
-      - ./cattleweb_root/database:./cattleweb/database/
+      - "./cattleweb_root/database:/cattleweb/database"
     environment:
       - proddev=prod
     env_file:
