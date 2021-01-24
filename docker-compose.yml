@@ -10,16 +10,29 @@ services:
       - proddev=prod
     env_file:
       - very_secret.env
+
   proxy:
     build:
       context: ./nginx
     volumes:
       - static_data:/vol
+      - ".data/certbot/conf:/etc/letsencrypt"
+      - ".data/certbot/www:/var/www/certbot"
     ports:
       - "80:8000"
       - "443:4430"
     depends_on:
       - cattleweb
+    # certificate renewal
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - "./certbot/conf:/etc/letsencrypt"
+      - "./certbot/www:/var/www/certbot"
+    # certificate renewal
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
    static_data:
