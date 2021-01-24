@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(cattlecam.nl www.cattlecam.nl)
+domains=(cattlecam.nl)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="jorik@cattlecam.nl" # Adding a valid address is strongly recommended
