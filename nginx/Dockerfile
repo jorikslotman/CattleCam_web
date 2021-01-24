@@ -10,7 +10,7 @@ RUN mkdir -p /vol
 RUN chmod 755 /vol
 
 RUN mkdir -p /etc/letsencrypt/live/
-RUN chown ningx:nginx /etc/letsencrypt/live/
+RUN chown nginx:nginx /etc/letsencrypt/live/
 RUN chmod 755 /etc/letsencrypt/live/
 
 USER nginx
