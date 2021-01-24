@@ -11,8 +11,8 @@ def over_ons(request):
 def contact(request):
     return render(request, 'pageviewer/contact.html')
     
-def services(request):
-    return render(request, 'pageviewer/services.html')
+def gallerij(request):
+    return render(request, 'pageviewer/gallerij.html')
 
 def producten(request):
     return render(request, 'pageviewer/producten.html')

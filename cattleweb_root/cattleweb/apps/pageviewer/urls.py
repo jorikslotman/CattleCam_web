@@ -7,5 +7,5 @@ urlpatterns = [
     path('over-ons', views.over_ons, name='over-ons'),
     path('contact', views.contact, name='contact'),
     path('producten', views.producten, name='producten'),
-    path('services', views.services, name='services')
+    path('gallerij', views.gallerij, name='gallerij')
 ]

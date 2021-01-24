@@ -37,14 +37,14 @@
               <a href="{% url 'pageviewer:producten' %}">Producten</a>
           </li>
 
+          {% url 'pageviewer:gallerij' as pageviewer_gallerij_url %}
+          <li class="{% if request.get_full_path == pageviewer_gallerij_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:gallerij' %}">Gallerij</a>
+          </li>
+
           {% url 'pageviewer:over-ons' as pageviewer_overons_url %}
           <li class="{% if request.get_full_path == pageviewer_overons_url %} active {% endif %}">
               <a href="{% url 'pageviewer:over-ons' %}">Over Ons</a>
-          </li>
-
-          {% url 'pageviewer:services' as pageviewer_services_url %}
-          <li class="{% if request.get_full_path == pageviewer_services_url %} active {% endif %}">
-              <a href="{% url 'pageviewer:services' %}">Services</a>
           </li>
 
           {% url 'pageviewer:contact' as pageviewer_contact_url %}
