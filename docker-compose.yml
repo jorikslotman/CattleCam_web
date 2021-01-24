@@ -34,7 +34,7 @@ services:
     depends_on:
       - proxy
     # certificate renewal
-    entrypoint: "/bin/sh -c \"trap exit TERM; while :; do certbot renew --post-hook 'chown root:nginx /etc/letsencrypt/live /etc/letsencrypt/archive && chmod 750 /etc/letsencrypt/live /etc/letsencrypt/archive && chown root:nginx /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem && chmod 640 /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem'; sleep 12h & wait $${!}; done;\"
+    entrypoint: "/bin/sh -c \"trap exit TERM; while :; do certbot renew --post-hook 'chown root:nginx /etc/letsencrypt/live /etc/letsencrypt/archive && chmod 750 /etc/letsencrypt/live /etc/letsencrypt/archive && chown root:nginx /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem && chmod 640 /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem'; sleep 12h & wait $${!}; done;\""
     # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
