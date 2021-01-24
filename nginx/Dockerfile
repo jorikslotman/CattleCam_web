@@ -12,4 +12,4 @@ RUN chmod 755 /vol
 RUN mkdir -p /etc/letsencrypt/live/cattlecam.nl
 RUN chmod 755 /etc/letsencrypt/live/cattlecam.nl
 
-USER nginx
+USER root
