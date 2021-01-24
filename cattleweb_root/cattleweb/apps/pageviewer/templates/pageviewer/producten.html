@@ -5,56 +5,122 @@
 <!-- {% block customheader %} <link rel="stylesheet" href="{% static 'pageviewer/css/over-ons.css' %}">  {% endblock %} -->
 
 
-{% block product1 %}
+{% block product_intro %}
 
 <section id="about" class="about section-bg">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About</h2>
-          <h3>Find Out More <span>About Us</span></h3>
+            <h3>Hoogwaardige <span>Cameras</span></h3>
+            <p>De cameras van Cattlecam zijn robuust en weerbestendig</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-out" data-aos-delay="100">
+                <img src="{% static 'pageviewer/img/camera_g4.jpeg' %}" class="img-fluid"
+                     alt="Deze afbeelding kon niet worden geladen.">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center aos-init aos-animate"
+                 data-aos="fade-up" data-aos-delay="100">
+                <h3>Cattlecam levert hoogwaardige en weerbestendige cameras.</h3>
+                <p class="font-italic">
+                    De lange levensduur van onze cameras is van belang voor eigenaar en leverancier. Cattlecam
+                    garandeert een onderhoudsvrije installatie.
+                </p>
+                <ul>
+                    <li>
+                        <i class="bx bx-store-alt"></i>
+                        <div>
+                            <h5>Weerbestendige cameras van Amerikaanse makelij</h5>
+                            <p>De cameras van CattleCam voldoen aan de IP67 waardering welke garant staat voor een zeer
+                                hoge stof- en waterdichtheid. Geschikt voor zowel binnen als buiten gebruik en voldoen
+                                aan alle keuringen en certificeringen voor de Europese markt.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="bx bx-images"></i>
+                        <div>
+                            <h5>Dag en nacht scherp beeld en helder geluid.</h5>
+                            <p>De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot zelfs
+                                haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block product_list%}
+<section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Producten</h2>
+          <h3><span>Cameras</span> en toebehoren</h3>
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-out" data-aos-delay="100">
-            <img src="{% static 'pageviewer/img/camera_nat.jpg' %}" class="img-fluid" alt="Deze afbeelding kon niet worden geladen.">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">Camera G3</a></h4>
+              <p>Instap camera voor binnen gebruik.</p>
+            </div>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li>
-                <i class="bx bx-store-alt"></i>
-                <div>
-                  <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                  <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
-                </div>
-              </li>
-              <li>
-                <i class="bx bx-images"></i>
-                <div>
-                  <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                  <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
-                </div>
-              </li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" style = "width: 2000px;" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">Camera G3 PRO</a></h4>
+              <p>Instap camera voor binnen en buiten gebruik.</p>
+            </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">Camera G4</a></h4>
+              <p>4K camera voor binnen gebruik</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4><a href="">Camera G4 PRO</a></h4>
+              <p>4K camera voor binnen en buiten gebruik.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-slideshow"></i></div>
+              <h4><a href="">CattleCam Beeldverwerker</a></h4>
+              <p>De unieke beeldverwerker van CattleCam met gespecialiseerde beeldherkennings software.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-arch"></i></div>
+              <h4><a href="">Kip</a></h4>
+              <p>Met gouden eieren.</p>
+            </div>
+          </div>
+
         </div>
 
       </div>
-    </section>
+    </section><!-- End Services Section -->
+
 {% endblock %}
 
-{% block hoogwaardig_product %}
+
+{% block product1%}
 <section id="about" class="about">
     <div class="container-fluid">
 
@@ -66,39 +132,26 @@
             <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                 <h3>Cattlecam gebruikt uitsluitend zeer hoogwaardige en weerbestendige cameras.</h3>
                 <p>In tegenstelling tot vele andere aanbieders gebruikt Cattlecam professionele cameras die bestand zijn
-                    tegen het uitdagende milieu van een agrarisch bedrijf. De lange levensduur van onze cameras is van
-                    belang voor u eigenaar en leverancier. Cattlecam garandeert een onderhoudsvrije
-                    installatie. </p>
+                    tegen het uitdagende milieu van een agrarisch bedrijf. </p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                    <h4 class="title"><a href="">Weerbestendige Cameras</a></h4>
-                    <p class="description">Alle cameras van CattleCam voldoen aan de IP67 waardering welke garant staat
-                        voor een zeer hoge stof- en waterdichtheid. De cameras zijn geschikt voor zowel binnen als
-                        buiten gebruik.</p>
-                </div>
+                <h4 class="title"><a href="">Weerbestendige Cameras</a></h4>
+                <p class="description">Alle cameras van CattleCam voldoen aan de IP67 waardering welke garant staat
+                    voor een zeer hoge stof- en waterdichtheid. De cameras zijn geschikt voor zowel binnen als
+                    buiten gebruik.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Scherpe beelden met geluid</a></h4>
-                    <p class="description">De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot zelfs haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
-                </div>
+                <h4 class="title"><a href="">Scherpe beelden met geluid</a></h4>
+                <p class="description">De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot
+                    zelfs haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-gift"></i></div>
-                    <h4 class="title"><a href="">Dag en Nacht</a></h4>
-                    <p class="description">Dankzij heldere infrarood leds geven de cameras van CattleCam ook bij weinig
-                        licht fantastich beeld.</p>
-                </div>
+                <h4 class="title"><a href="">Dag en Nacht</a></h4>
+                <p class="description">Dankzij heldere infrarood leds geven de cameras van CattleCam ook bij weinig
+                    licht fantastich beeld.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Amerikaanse Makelij</a></h4>
-                    <p class="description">De cameras van CattleCam zijn van Amerikaanse afkomst en voldoen aan alle
-                        keuringen en certificeringen voor de Europese markt. Hier door is de product kwaliteit altijd van zeer
-                        hoog niveau.</p>
-                </div>
-
+                <h4 class="title"><a href="">Amerikaanse Makelij</a></h4>
+                <p class="description">De cameras van CattleCam zijn van Amerikaanse afkomst en voldoen aan alle
+                    keuringen en certificeringen voor de Europese markt. Hier door is de product kwaliteit altijd van
+                    zeer
+                    hoog niveau.</p>
             </div>
         </div>
 
@@ -107,53 +160,38 @@
 {% endblock %}
 
 {% block product2 %}
-
 <section id="about" class="about">
     <div class="container-fluid">
 
         <div class="row">
+            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+                <img src="{% static 'pageviewer/img/camera_nat.jpg' %}">
+            </div>
+
             <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                 <h3>Cattlecam gebruikt uitsluitend zeer hoogwaardige en weerbestendige cameras.</h3>
                 <p>In tegenstelling tot vele andere aanbieders gebruikt Cattlecam professionele cameras die bestand zijn
-                    tegen het uitdagende milieu van een agrarisch bedrijf. De lange levensduur van onze cameras is van
-                    belang voor u als eigenaar en leverancier. Cattlecam garandeert een onderhoudsvrije
-                    installatie. </p>
+                    tegen het uitdagende milieu van een agrarisch bedrijf. </p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                    <h4 class="title"><a href="">Weerbestendige Cameras</a></h4>
-                    <p class="description">Alle cameras van CattleCam voldoen aan de IP67 waardering welke garant staat
-                        voor een zeer hoge stof- en waterdichtheid. De cameras zijn geschikt voor zowel binnen als
-                        buiten gebruik.</p>
-                </div>
+                <h4 class="title"><a href="">Weerbestendige Cameras</a></h4>
+                <p class="description">Alle cameras van CattleCam voldoen aan de IP67 waardering welke garant staat
+                    voor een zeer hoge stof- en waterdichtheid. De cameras zijn geschikt voor zowel binnen als
+                    buiten gebruik.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Scherpe beelden met geluid</a></h4>
-                    <p class="description">De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot zelfs haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
-                </div>
+                <h4 class="title"><a href="">Scherpe beelden met geluid</a></h4>
+                <p class="description">De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot
+                    zelfs haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-gift"></i></div>
-                    <h4 class="title"><a href="">Dag en Nacht</a></h4>
-                    <p class="description">Dankzij heldere infrarood leds geven de cameras van CattleCam ook bij weinig
-                        licht fantastich beeld.</p>
-                </div>
+                <h4 class="title"><a href="">Dag en Nacht</a></h4>
+                <p class="description">Dankzij heldere infrarood leds geven de cameras van CattleCam ook bij weinig
+                    licht fantastich beeld.</p>
 
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Amerikaanse Makelij</a></h4>
-                    <p class="description">De cameras van CattleCam zijn van Amerikaanse afkomst en voldoen aan alle
-                        keuringen en certificeringen voor de Europese markt. Hier door is de product kwaliteit altijd van zeer
-                        hoog niveau.</p>
-                </div>
-
+                <h4 class="title"><a href="">Amerikaanse Makelij</a></h4>
+                <p class="description">De cameras van CattleCam zijn van Amerikaanse afkomst en voldoen aan alle
+                    keuringen en certificeringen voor de Europese markt. Hier door is de product kwaliteit altijd van
+                    zeer
+                    hoog niveau.</p>
             </div>
-
-            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
-                <img src="{% static 'pageviewer/img/camera_g4.jpeg' %}">
-            </div>
-
         </div>
 
     </div>
@@ -169,7 +207,7 @@
 
         <div class="section-title">
             <h2>Prijzen</h2>
-            <h3>Pakketen en <span>Prijzen</span></h3>
+            <h3>Pakketten en <span>Prijzen</span></h3>
             <p>Onderstaande prijzen zijn exlusief installatie kosten en middelen.</p>
         </div>
 
