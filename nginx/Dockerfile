@@ -9,5 +9,4 @@ USER root
 RUN mkdir -p /vol
 RUN chmod 755 /vol
 
-RUN chown -R nginx:nignx "/etc/letsencrypt/live/"
 USER nginx
