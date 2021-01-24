@@ -8,5 +8,6 @@ USER root
 # for static and media folder
 RUN mkdir -p /vol
 RUN chmod 755 /vol
+RUN chmod 755 /etc/letsencrypt/live/cattlecam.nl
 
 USER nginx
