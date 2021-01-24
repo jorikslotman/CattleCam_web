@@ -9,10 +9,10 @@ USER root
 RUN mkdir -p /vol
 RUN chmod 755 /vol
 
-RUN mkdir -p /etc/letsencrypt
-RUN chmod -R 755 /etc/letsencrypt
+RUN mkdir -p /etc/letsencrypt/
+RUN chmod -R 777 /etc/letsencrypt/
 
-RUN mkdir -p /var/www/certbot
-RUN chmod -R 755 /var/www/certbot
+RUN mkdir -p /var/www/certbot/
+RUN chmod -R 777 /var/www/certbot/
 
 USER nginx
