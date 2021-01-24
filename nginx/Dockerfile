@@ -9,5 +9,8 @@ USER root
 RUN mkdir -p /vol
 RUN chmod 755 /vol
 
+RUN mkdir -p /etc/letsencrypt
+RUN chmod 755 -R /etc/letsencrypt
+
 
 USER nginx
