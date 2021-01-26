@@ -1,0 +1,126 @@
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-envelope"></i> <a href="mailto:info@cattlecam.nl">info@cattlecam.nl</a>
+        <i class="icofont-phone"></i> +31 6 44 5959 00
+      </div>
+      
+      <!-- <div class="social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="skype"><i class="icofont-skype"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div> -->
+     
+    </div>
+  </div>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      {% url 'pageviewer:index' as pageviewer_index_url %}
+      <h1 class="logo mr-auto"><a href="{% url 'pageviewer:index' %}">CattleCam<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          {% url 'pageviewer:index' as pageviewer_index_url %}
+          <li class="{% if request.get_full_path == pageviewer_index_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:index' %}">Home </a>
+          </li>
+          
+          {% url 'pageviewer:producten' as pageviewer_producten_url %}
+          <li class="{% if request.get_full_path == pageviewer_production_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:producten' %}">Producten</a>
+          </li>
+
+          {% url 'pageviewer:over-ons' as pageviewer_overons_url %}
+          <li class="{% if request.get_full_path == pageviewer_overons_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:over-ons' %}">Over Ons</a>
+          </li>
+
+          {% url 'pageviewer:services' as pageviewer_services_url %}
+          <li class="{% if request.get_full_path == pageviewer_services_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:services' %}">Services</a>
+          </li>
+
+          {% url 'pageviewer:contact' as pageviewer_contact_url %}
+          <li class="{% if request.get_full_path == pageviewer_contact_url %} active {% endif %}">
+              <a href="{% url 'pageviewer:contact' %}">Contact</a>
+          </li>
+
+          {% url 'survey:index' as survey_index_url %}
+          <li class="{% if request.get_full_path == survey_index_url %} active {% endif %}">
+              <a href="{% url 'survey:index' %}">Enquête</a>
+          </li>
+
+
+
+          <!-- Producten
+          Over ons -->
+          <!-- Services -->
+          <!-- Contact -->
+          <!-- Enquete -->
+
+
+
+
+
+          <!-- <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="drop-down"><a href="#">Deep Drop Down</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li> -->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">CattleCam&trade;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% url 'pageviewer:index' as pageviewer_index_url %}
+            <li class="nav-item {% if request.get_full_path == pageviewer_index_url %} active {% endif %}">
+                <a class="nav-link" href="{% url 'pageviewer:index' %}">Home </a>
+            </li>
+            {% url 'survey:index' as survey_index_url %}
+            <li class="nav-item {% if request.get_full_path == survey_index_url %} active {% endif %}">
+                <a class="nav-link" href="{% url 'survey:index' %}">Enquête</a>
+            </li>
+            {% url 'pageviewer:over-ons' as pageviewer_overons_url %}
+            <li class="nav-item {% if request.get_full_path == pageviewer_overons_url %} active {% endif %}">
+                <a class="nav-link" href="{% url 'pageviewer:over-ons' %}">Over Ons</a>
+            </li>
+        </ul>
+    </div>
+</nav> -->

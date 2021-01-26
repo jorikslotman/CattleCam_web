@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "cattleweb/components/header.html" %}
+        <title>{% block title %} CattleCam {% endblock %}</title>
+    </head>
+    <body>
+
+        {% include "cattleweb/components/navbar.html" %}
+
+        <div class="flex-container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% include "cattleweb/components/footer.html" %}
+    </body>
+</html>

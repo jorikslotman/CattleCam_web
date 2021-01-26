@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  cattleweb:
+    build: ./cattleweb_root
+    volumes:
+      - static_data:/vol/cattleweb
+      - "./cattleweb_root/database:/cattleweb/database"
+    environment:
+      - proddev=prod
+    env_file:
+      - very_secret.env
+
+  proxy:
+    build:
+      context: ./nginx
+    volumes:
+      - static_data:/vol
+      - "./certbot/conf:/etc/letsencrypt/"
+      - "./certbot/www:/var/www/certbot"
+    ports:
+      - "80:8000"
+      - "443:4430"
+    depends_on:
+      - cattleweb
+    # certificate renewal
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - "./certbot/conf:/etc/letsencrypt/"
+      - "./certbot/www:/var/www/certbot"
+    depends_on:
+      - proxy
+    # certificate renewal
+    entrypoint: "/bin/sh -c \"trap exit TERM; while :; do certbot renew --post-hook 'chown root:nginx /etc/letsencrypt/live /etc/letsencrypt/archive && chmod 750 /etc/letsencrypt/live /etc/letsencrypt/archive && chown root:nginx /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem && chmod 640 /etc/letsencrypt/archive/cattlecam.nl/privkey*.pem'; sleep 12h & wait $${!}; done;\""
+    # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+   static_data:
