@@ -5,13 +5,24 @@
 
 {% block content %}
 
-    <h1 class="display-4">Neem deel aan het marktonderzoek!</h1>
-    <p class="lead">Ontvang korting bij het volledig invullen van de enquête.</p>
-    <hr class="my-4">
-    <p>Ongeveer 5 minuten:</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="{% url 'survey:assess' survey_id=1 %}" role="button">Start enquête</a>
-    </p>
 
+<section id="Marktonderzoek" class="portfolio">
+    <div class="container" data-aos="fade-up">
 
+        <div class="section-title">
+            <h3>Neem deel aan het <span>Marktonderzoek</span></h3>
+            <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque
+                vitae autem.</p>
+        </div>
+        <div>
+            <h1 class="display-4">Neem deel aan het marktonderzoek!</h1>
+            <p class="lead">Ontvang korting bij het volledig invullen van de enquête.</p>
+            <hr class="my-4">
+            <p>Ongeveer 5 minuten:</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{% url 'survey:assess' survey_id=1 %}" role="button">Start enquête</a>
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}
