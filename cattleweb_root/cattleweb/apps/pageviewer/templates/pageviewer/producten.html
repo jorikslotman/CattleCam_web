@@ -1,11 +1,11 @@
-{% extends "cattleweb/layout/producten-layout.html" %}
+{% extends "cattleweb/layout/fullwidth.html" %}
 {% load static %}
 
 {% block title %} CattleCam - Over Ons {% endblock %}
 <!-- {% block customheader %} <link rel="stylesheet" href="{% static 'pageviewer/css/over-ons.css' %}">  {% endblock %} -->
 
 
-{% block product_intro %}
+{% block content %}
 
 <section id="about" class="about section-bg">
     <div class="container aos-init aos-animate" data-aos="fade-up">
@@ -51,9 +51,8 @@
 
     </div>
 </section>
-{% endblock %}
 
-{% block product_list%}
+
 <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
@@ -117,10 +116,8 @@
       </div>
     </section><!-- End Services Section -->
 
-{% endblock %}
 
 
-{% block product1%}
 <section id="about" class="about">
     <div class="container-fluid">
 
@@ -157,9 +154,8 @@
 
     </div>
 </section><!-- End About Section -->
-{% endblock %}
 
-{% block product2 %}
+
 <section id="about" class="about">
     <div class="container-fluid">
 
@@ -196,10 +192,8 @@
 
     </div>
 </section><!-- End About Section -->
-{% endblock %}
 
 
-{% block prijzen %}
 
 <!-- ======= Pricing Section ======= -->
 <section id="pricing" class="pricing">
