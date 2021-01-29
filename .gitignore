@@ -2,3 +2,4 @@
 /venv/
 /.idea/
 /cattleweb_root/database/db.sqlite3
+.gitignore

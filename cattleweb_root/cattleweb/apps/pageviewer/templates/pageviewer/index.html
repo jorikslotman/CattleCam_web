@@ -28,38 +28,49 @@
 
 <section id="featured-services" class="featured-services">
     <div class="container" data-aos="fade-up">
+        {% url 'pageviewer:producten' as pageviewer_gallerij_url %}
 
-        <div class="row">
+        <div class="row {% if request.get_full_path == pageviewer_gallerij_url %} active {% endif %}" style="align-items: flex-start;">
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 ">
+                <a href="{% url 'pageviewer:gallerij' %}">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4 class="title">Afkalf voortgang</h4>
+                        <p class="description">Dag en nacht toezicht op droge koeien en geboorte verloop</p>
+                    </div>
+                </a>
+            </div>
+
+
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4 class="title"><a href="">Afkalf voortgang</a></h4>
-                    <p class="description">Dag en nacht toezicht op de droge koeien en het geboorte verloop</p>
-                </div>
+                <a href="{% url 'pageviewer:gallerij' %}">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-file"></i></div>
+                        <h4 class="title">Erf toezicht</h4>
+                        <p class="description">Bij huis of op het land altijd toezicht op het erf en machines</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="">Erf toezicht</a></h4>
-                    <p class="description">Bij huis of op het land altijd toezicht op het erf</p>
-                </div>
+                <a href="{% url 'pageviewer:gallerij' %}">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-tachometer"></i></div>
+                        <h4 class="title">Bedrijfsbeveiliging</h4>
+                        <p class="description">Beeld opname vergroot de veiligheid op het bedrijf en prive</p>
+                    </div>
+                </a>
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon"><i class="bx bx-tachometer"></i></div>
-                    <h4 class="title"><a href="">Bedrijfs beveiliging</a></h4>
-                    <p class="description">Beeld opname vergroot de veiligheid op het bedrijf</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon"><i class="bx bx-world"></i></div>
-                    <h4 class="title"><a href="">Tocht herkenning</a></h4>
-                    <p class="description">Met een extra blik op de dieren is tocht sneller gezien</p>
-                </div>
+                <a href="{% url 'pageviewer:gallerij' %}">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon"><i class="bx bx-world"></i></div>
+                        <h4 class="title">Tocht herkenning</h4>
+                        <p class="description">Met een extra blik op de dieren is tocht makkelijker te zien</p>
+                    </div>
+                </a>
             </div>
 
         </div>
@@ -70,111 +81,117 @@
 {% endblock %}
 
 {% block about %}
-    <section id="about" class="about">
-      <div class="container-fluid">
+<section id="about" class="about">
+    <div class="container-fluid">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
-            <img src="{% static 'pageviewer/img/camera_g4.jpeg' %}" class="img-fluid" style="transform: scaleX(-1);">
-          </div>
-
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+                <img src="{% static 'pageviewer/img/camera_nat.jpg' %}">
             </div>
 
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
+            <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                <h3>Cattlecam gebruikt uitsluitend zeer hoogwaardige en weerbestendige cameras.</h3>
+                <p>In tegenstelling tot vele andere aanbieders gebruikt Cattlecam professionele cameras die bestand zijn
+                    tegen het uitdagende milieu van een agrarisch bedrijf. </p>
 
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-            </div>
+                <h4 class="title"><a href="">Weerbestendige Cameras</a></h4>
+                <p class="description">Alle cameras van CattleCam voldoen aan de IP67 waardering welke garant staat
+                    voor een zeer hoge stof- en waterdichtheid. De cameras zijn geschikt voor zowel binnen als
+                    buiten gebruik.</p>
 
-          </div>
+                <h4 class="title"><a href="">Scherpe beelden met geluid</a></h4>
+                <p class="description">De cameras van CattleCam zijn beschikbaar in beeldkwaliteit van 1080p full HD tot
+                    zelfs haarscherp 4K. Dankzij de ingebouwde microfoon is het ook mogelijk uw vee te horen.</p>
+
+                <h4 class="title"><a href="">Dag en Nacht</a></h4>
+                <p class="description">Dankzij heldere infrarood leds geven de cameras van CattleCam ook bij weinig
+                    licht fantastich beeld.</p>
+
+                <h4 class="title"><a href="">Amerikaanse Makelij</a></h4>
+                <p class="description">De cameras van CattleCam zijn van Amerikaanse afkomst en voldoen aan alle
+                    keuringen en certificeringen voor de Europese markt. Hier door is de product kwaliteit altijd van
+                    zeer
+                    hoog niveau.</p>
+            </div>
         </div>
 
-      </div>
-    </section><!-- End About Section -->
+    </div>
+</section><!-- End About Section -->
 {% endblock %}
 
 {% block testimonials %}
-  <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials" style="background: url({% static 'pageviewer/img/testimonials-bg.jpg' %}) no-repeat; padding: 80px 0;
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials" style="background: url({% static 'pageviewer/img/testimonials/testimonials-bg.jpg' %}) no-repeat; padding: 80px 0;
   background-position: center center;
   background-size: cover;
   position: relative;;">
-      <div class="container" data-aos="zoom-in">
+    <div class="container" data-aos="zoom-in">
 
         <div class="owl-carousel testimonials-carousel">
 
-          <div class="testimonial-item">
-            <img src="{% static 'pageviewer/img/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-            <h3>Peter de Vries</h3>
-            <h4>Boer en tevreden gebruiker</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Dankzij CattleCam kan ik op het land mooi zien of het afkalven vordert.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+            <div class="testimonial-item">
+                <img src="{% static 'pageviewer/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Peter de Vries</h3>
+                <h4>Boer en tevreden gebruiker</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Dankzij CattleCam kan ik op het land mooi zien of het afkalven vordert.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
 
-          <div class="testimonial-item">
-            <img src="{% static 'pageviewer/img/testimonials-2.jpg' %}"class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+            <div class="testimonial-item">
+                <img src="{% static 'pageviewer/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                    quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
 
-          <div class="testimonial-item">
-            <img src="{% static 'pageviewer/img/testimonials-3.jpg' %}" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+            <div class="testimonial-item">
+                <img src="{% static 'pageviewer/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                    tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
 
-          <div class="testimonial-item">
-            <img src="{% static 'pageviewer/img/testimonials-4.jpg' %}"class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+            <div class="testimonial-item">
+                <img src="{% static 'pageviewer/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
+                    minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
 
-          <div class="testimonial-item">
-            <img src="{% static 'pageviewer/img/testimonials-5.jpg' %}" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+            <div class="testimonial-item">
+                <img src="{% static 'pageviewer/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
+                    culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
+                    quid.
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+            </div>
 
         </div>
 
-      </div>
-    </section><!-- End Testimonials Section -->
+    </div>
+</section><!-- End Testimonials Section -->
 
 {% endblock %}

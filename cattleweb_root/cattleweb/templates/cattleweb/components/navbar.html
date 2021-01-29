@@ -4,6 +4,7 @@
       <div class="contact-info mr-auto">
         <i class="icofont-envelope"></i> <a href="mailto:info@cattlecam.nl">info@cattlecam.nl</a>
         <i class="icofont-phone"></i> +31 6 44 5959 00
+        <i class="icofont-check-alt icofont-1x"></i>KVK: 74459163
       </div>
       
       <!-- <div class="social-links">
@@ -54,7 +55,7 @@
 
           {% url 'survey:index' as survey_index_url %}
           <li class="{% if request.get_full_path == survey_index_url %} active {% endif %}">
-              <a href="{% url 'survey:index' %}">Enquête</a>
+              <a href="{% url 'survey:index' %}">Marktonderzoek</a>
           </li>
 
 

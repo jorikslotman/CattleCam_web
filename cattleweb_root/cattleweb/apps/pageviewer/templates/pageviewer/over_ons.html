@@ -1,76 +1,79 @@
-{% extends "cattleweb/layout/over-ons-layout.html" %}
+{% extends "cattleweb/layout/fullwidth.html" %}
 {% load static %}
 
 {% block title %} CattleCam - Over Ons {% endblock %}
 <!-- {% block customheader %} <link rel="stylesheet" href="{% static 'pageviewer/css/over-ons.css' %}">  {% endblock %} -->
 
-{% block over_ons %}
-<div class="about-section">
-	<h1>Over Ons</h1>
-	<p>
-		Wij zijn een jong en gepassioneerd team van technische gasten die graag het gedrag van uw koeien in kaart willen brengen. Vul hier de enquete in.
-		Met onze achtergrond in data mining, machine learning, mechatronica en data driven farming hebben we de unieke set aan kennis om u zo goed mogelijk van dienst te zijn.
-		Maak hier onder kennis met de personen achter CattleCam en schroom niet omm ons persoonlijk te benaderen! Liefs... xoxox.
-	</p>
-</div>
 
-
-{% endblock %}
-
-{% block het_team %}
-
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <img src="{% static 'pageviewer/img/mark.jpg' %}" alt="Jan Willem" style="width:100%">
-            <div class="container">
-                <h2>Jan Willem</h2>
-                <p class="title">Beunhaas 1</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>janwillem@cattlecam.nl</p>
-                <p>
-                    <button class="button">Contact</button>
-                </p>
-            </div>
+{% block content %}
+<section id="Marktonderzoek" class="portfolio">
+    <div class="container" data-aos="fade-up">
+        <div class="about-section">
+            <h1>Over Ons</h1>
+            <p>
+                Wij zijn een jong en gepassioneerd team van technische gasten die graag het gedrag van uw koeien in
+                kaart willen brengen. Vul hier de enquete in.
+                Met onze achtergrond in data mining, machine learning, mechatronica en data driven farming hebben we de
+                unieke set aan kennis om u zo goed mogelijk van dienst te zijn.
+                Maak hier onder kennis met de personen achter CattleCam en schroom niet omm ons persoonlijk te
+                benaderen! Liefs... xoxox.
+            </p>
         </div>
     </div>
+</section>
 
-    <div class="column">
-        <div class="card">
-            <img src="{% static 'pageviewer/img/willem.jpg' %}" alt="John" style="width:100%">
-            <div class="container">
-                <h2>Willem</h2>
-                <p class="title">Beunhaas 2</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>willem@cattlecam.nl</p>
-                <p>
-                    <button class="button">Contact</button>
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <div class="column">
-        <div class="card">
-            <img src="{% static 'pageviewer/img/jorik.jpg' %}" alt="John" style="width:100%">
-            <div class="container">
-                <h2>Jorik </h2>
-                <p class="title">Beunhaas 3</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>jorikslotman@cattlecam.nl</p>
-                <p>
-                    <button class="button">Contact</button>
-                </p>
-            </div>
-        </div>
-    </div>
+<!--Blok met fotos van Willem:-->
 
-</div>
-{% endblock %}
+<!--<h2 style="text-align:center">Our Team</h2>-->
+<!--<div class="row">-->
+<!--    <div class="column">-->
+<!--        <div class="card">-->
+<!--            <img src="{% static 'pageviewer/img/mark.jpg' %}" alt="Jan Willem" style="width:100%">-->
+<!--            <div class="container">-->
+<!--                <h2>Jan Willem</h2>-->
+<!--                <p class="title">Beunhaas 1</p>-->
+<!--                <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--                <p>janwillem@cattlecam.nl</p>-->
+<!--                <p>-->
+<!--                    <button class="button">Contact</button>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-{% block het_team2 %}
-<!-- ======= Team Section ======= -->
+<!--    <div class="column">-->
+<!--        <div class="card">-->
+<!--            <img src="{% static 'pageviewer/img/willem.jpg' %}" alt="John" style="width:100%">-->
+<!--            <div class="container">-->
+<!--                <h2>Willem</h2>-->
+<!--                <p class="title">Beunhaas 2</p>-->
+<!--                <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--                <p>willem@cattlecam.nl</p>-->
+<!--                <p>-->
+<!--                    <button class="button">Contact</button>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="column">-->
+<!--        <div class="card">-->
+<!--            <img src="{% static 'pageviewer/img/jorik.jpg' %}" alt="John" style="width:100%">-->
+<!--            <div class="container">-->
+<!--                <h2>Jorik </h2>-->
+<!--                <p class="title">Beunhaas 3</p>-->
+<!--                <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--                <p>jorikslotman@cattlecam.nl</p>-->
+<!--                <p>-->
+<!--                    <button class="button">Contact</button>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
 
 <section id="team" class="team section-bg">
     <div class="container" data-aos="fade-up">
@@ -87,7 +90,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
                     <div class="member-img">
-                        <img src="{% static 'pageviewer/img/willem.jpg' %}" alt="Willem" class="img-fluid" >
+                        <img src="{% static 'pageviewer/img/willem.jpg' %}" alt="Willem" class="img-fluid">
                         <div class="social">
                             <a href=""><i class="icofont-twitter"></i></a>
                             <a href=""><i class="icofont-facebook"></i></a>
@@ -142,6 +145,7 @@
 
     </div>
 </section><!-- End Team Section -->
+
 {% endblock %}
 
 
