@@ -436,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# hero Section
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
@@ -611,6 +611,24 @@ section {
   .section-title p {
     width: 50%;
   }
+}
+
+.btn-enquete {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #23540d!important;
+}
+
+.btn-enquete:hover {
+  background: #247cf0;
 }
 
 /*--------------------------------------------------------------
@@ -1811,3 +1829,67 @@ section {
     padding: 2px 0;
   }
 }
+
+
+
+
+#marktonderzoek {
+  width: 100%;
+  height: 75vh;
+  background-size: cover;
+  position: relative;
+}
+
+#marktonderzoek:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#marktonderzoek .container {
+  position: relative;
+  padding-top: 132px;
+}
+
+@media (max-width: 992px) {
+  #marktonderzoek .container {
+    padding-top: 58px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Marktonderzoek
+--------------------------------------------------------------*/
+
+
+
+
+.btn-enquete {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #23540d;
+}
+
+.btn-enquete:hover {
+  background: #247cf0;
+}
+
+
+@media (max-width: 768px) {
+  .btn-enquete {
+    font-size: 13px;
+  }
+}
+
