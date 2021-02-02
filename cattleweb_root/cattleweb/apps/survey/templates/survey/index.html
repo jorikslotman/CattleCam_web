@@ -5,21 +5,25 @@
 
 {% block content %}
 
-<section id="marktonderzoek" class="portfolio">
+<section id="about" class="portfolio">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
+      <div class="section-title justify-content-between" >
         <h2>Enquête</h2>
         <h3>Neem deel aan ons <span>Marktonderzoek</span></h3>
         <p>Uw hulp wordt zeer gewaardeerd! Ontvang korting bij het volledig invullen van deze enquête. Het duurt ongeveer 5 minuten. </p>
+        <br>
+        <a href="{% url 'survey:assess' survey_id=1 %}" class="btn-enquete scrollto">Start enquête</a>
+        
+        <br>
+        <p>CattleCam richt zich op het monitoren van uw bedrijf met verschillende camera’s. 
+          Hiermee heeft u 24/7 zich op alles wat er in en rondom uw bedrijf gebeurt. 
+          Om deze toepassing beter aan te laten sluiten op uw wensen vragen wij uw mening. </p>
+        <br>  
+        <span>We danken u voor uw tijd en deelname.</span>
       </div>
 
       
-        <div class="d-flex">
-            <a href="{% url 'survey:assess' survey_id=1 %}" class="btn-enquete scrollto">Start enquête</a>
-        
-      </div>
-
      
     </div>
   </section><!-- End Portfolio Section -->

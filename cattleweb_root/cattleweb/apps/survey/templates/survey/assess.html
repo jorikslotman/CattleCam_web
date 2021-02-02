@@ -6,19 +6,38 @@
 
 {% block content %}
 
-
-<div class="jumbotron">
-    <h1 class="display-4">{{form.title}}</h1>
-    <p class="lead">{{form.desc}}</p>
-    <hr class="my-4">
-    <form action="{% url 'survey:process' survey.id %} " method="post">
-        {% crispy form form.helper %}
-        <div class="row justify-content-between">
-            <div class="col"><input type="submit" name="submit" value="Verstuur" class="btn btn-primary" id="submit-id-submit" /></div>
-            <div class="col text-right"><a class="btn btn-secondary" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
+<section id="about" class="portfolio"></section>
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+        <!-- <h2>Enquête</h2> -->
+        <h3>Marktonderzoek <span>Cattlecam.</span></h3>
         </div>
-    </form>
+    </div>
+</section>
+
+
+
+
+
+<div class="container" data-aos="fade-up">
+    <div class="row justify-content-start">
+        <div class="col-8">
+            <h1>{{form.title}}</h1>
+            <p>{{form.desc}}</p>
+            <hr color="#23540d">
+            <form action="{% url 'survey:process' survey.id %} " method="post">
+                {% crispy form form.helper %}
+                <div class="row justify-content-between">
+                    <div class="col"><input type="submit" name="submit" value="Verstuur" class="btn btn-primary" id="submit-id-submit" /></div>
+                    <div class="col text-right"><a class="btn btn-secondary" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
+                </div>
+            </form>
+        </div>
+      
+    </div>
 </div>
+
+
 
 
 
