@@ -30,8 +30,10 @@ def assess(request,survey_id):
                     response_time=datetime.datetime.now()
                 )
                 response_object.save()
-
-            return redirect('survey:thanks')
+            if survey.next_survey is not None:
+                return redirect('survey:assess', survey_id=survey.next_survey.id)
+            else:
+                return redirect('survey:thanks')
 
 
     form = SurveyForm(survey)
@@ -40,6 +42,8 @@ def assess(request,survey_id):
     return render(request, 'survey/assess.html',context=context)
 
 def thanks(request):
+    messages.warning(request, 'HET GAAT FOUT JONGEN')
     messages.success(request, 'Bedankt voor het invullen!')
-    return redirect('survey:assess',survey_id=2)
+    return redirect('survey:index')
+
 

@@ -9,6 +9,8 @@ class Survey(models.Model):
     private_title = models.CharField(max_length=200,default='marktonderzoek')
     private_description = models.TextField(null=True,default='Is CattleCam de kip met gouden eieren?')
     pub_date = models.DateTimeField('date published')
+    next_survey = models.ForeignKey('self',null=True, on_delete=models.CASCADE)
+    # previous_survey = models.ForeignKey('self',null=True, on_delete=models.CASCADE)
 
     @property
     def questions(self):
