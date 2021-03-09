@@ -16,7 +16,7 @@
 </section>
 
 
-<div class="container" data-aos="fade-up">
+<div class="container" data-aos="fade-up" style="margin-bottom: 20px;">
     <div class="row justify-content-start">
         <div class="col-8">
             <h1>{{form.title}}</h1>
@@ -25,8 +25,8 @@
             <form action="{% url 'survey:process' survey.id %} " method="post">
                 {% crispy form form.helper %}
                 <div class="row justify-content-between">
-                    <div class="col text-right"><a class="btn btn-secondary" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
-                    <div class="col"><input type="submit" name="submit" value="Volgende vraag" class="btn btn-primary" id="submit-id-submit" /></div>
+                    <div class="col text-right"><a class="btn btn-back" href="{% url 'survey:index' %}" role="button">Ga terug</a></div>
+                    <div class="col"><input type="submit" name="submit" value="Volgende vraag" class="btn btn-enquete" id="submit-id-submit" /></div>
                 </div>
             </form>
         </div>
